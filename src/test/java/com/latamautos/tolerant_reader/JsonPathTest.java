@@ -1,4 +1,4 @@
-package com.latamautos.labs;
+package com.latamautos.tolerant_reader;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

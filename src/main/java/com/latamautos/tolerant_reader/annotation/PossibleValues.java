@@ -1,4 +1,4 @@
-package com.latamautos.labs.annotation;
+package com.latamautos.tolerant_reader.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

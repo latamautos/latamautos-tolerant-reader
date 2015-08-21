@@ -1,6 +1,6 @@
-package com.latamautos.labs.dto;
+package com.latamautos.tolerant_reader.dto;
 
-import com.latamautos.labs.annotation.PossibleValues;
+import com.latamautos.tolerant_reader.annotation.PossibleValues;
 import lombok.Data;
 
 /**

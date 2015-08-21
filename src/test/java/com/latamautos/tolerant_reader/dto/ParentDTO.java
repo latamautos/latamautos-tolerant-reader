@@ -1,7 +1,9 @@
-package com.latamautos.labs.dto;
+package com.latamautos.tolerant_reader.dto;
 
-import com.latamautos.labs.annotation.PossibleValues;
+import com.latamautos.tolerant_reader.annotation.PossibleValues;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * Created by andreslopez on 8/6/15.
@@ -29,6 +31,7 @@ public class ParentDTO {
 
     private boolean booleanPrimitive;
 
-    private ChildDTO childDTO;
+    @PossibleValues(also = "motor")
+    private List<ChildDTO> childDTO;
 
 }
