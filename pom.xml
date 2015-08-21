@@ -70,4 +70,17 @@
 
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>deployment-releases</id>
+            <name>Internal Releases</name>
+            <url>http://ec2-52-1-220-220.compute-1.amazonaws.com:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>deployment</id>
+            <name>Internal Snapshots</name>
+            <url>http://ec2-52-1-220-220.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
