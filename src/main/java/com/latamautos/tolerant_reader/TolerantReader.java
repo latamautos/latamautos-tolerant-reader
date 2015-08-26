@@ -102,7 +102,7 @@ public class TolerantReader {
 
     }
 
-    private static <T> T getSingleResultByClass(Class<T> clazz, String json) {
+    public static <T> T getSingleResultByClass(Class<T> clazz, String json) {
         T o = null;
         try {
             o = clazz.newInstance();
