@@ -79,14 +79,26 @@ public class TolerantReader {
     public static Object toObject(Class clazz, String value) {
         String simpleClassName = clazz.getSimpleName();
 
-        if (Boolean.class == clazz || simpleClassName.equals("boolean")) return Boolean.parseBoolean(value);
-        if (Byte.class == clazz || simpleClassName.equals("byte")) return Byte.parseByte(value);
-        if (Short.class == clazz || simpleClassName.equals("short")) return Short.parseShort(value);
-        if (Integer.class == clazz || simpleClassName.equals("int")) return Integer.parseInt(value);
-        if (Long.class == clazz || simpleClassName.equals("long")) return Long.parseLong(value);
-        if (Float.class == clazz || simpleClassName.equals("float")) return Float.parseFloat(value);
-        if (Double.class == clazz || simpleClassName.equals("double")) return Double.parseDouble(value);
+        try {
+            if (Boolean.class == clazz || simpleClassName.equals("boolean")) return Boolean.parseBoolean(value);
+            if (Byte.class == clazz || simpleClassName.equals("byte")) return Byte.parseByte(value);
+            if (Short.class == clazz || simpleClassName.equals("short")) return Short.parseShort(value);
+            if (Integer.class == clazz || simpleClassName.equals("int")) return Integer.parseInt(value);
+            if (Long.class == clazz || simpleClassName.equals("long")) return Long.parseLong(value);
+            if (Float.class == clazz || simpleClassName.equals("float")) return Float.parseFloat(value);
+            if (Double.class == clazz || simpleClassName.equals("double")) return Double.parseDouble(value);
+
+        } catch (NumberFormatException e) {
+            if (Boolean.class == clazz || simpleClassName.equals("boolean")) return Boolean.parseBoolean("false");
+            if (Byte.class == clazz || simpleClassName.equals("byte")) return Byte.parseByte("");
+            if (Short.class == clazz || simpleClassName.equals("short")) return Short.parseShort("0");
+            if (Integer.class == clazz || simpleClassName.equals("int")) return Integer.parseInt("0");
+            if (Long.class == clazz || simpleClassName.equals("long")) return Long.parseLong("0l");
+            if (Float.class == clazz || simpleClassName.equals("float")) return Float.parseFloat("0f");
+            if (Double.class == clazz || simpleClassName.equals("double")) return Double.parseDouble("0d");
+        }
         return value;
+
     }
 
     private static <T> List<String> getPossibleKeysOfField(Field field) {
@@ -153,8 +165,7 @@ public class TolerantReader {
             Object fieldValue = searchByKey(str, json);
             if (fieldValue != null) {
                 field.setAccessible(true);
-                field.set(o, toObject(field.getType(), (String) fieldValue));
-                System.out.println(fieldValue);
+                field.set(o, toObject(field.getType(), String.valueOf(fieldValue)));
                 break;
             }
         }
