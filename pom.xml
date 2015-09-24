@@ -3,7 +3,7 @@
     <groupId>com.latamautos</groupId>
     <artifactId>latamautos-tolerant-reader</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>latamautos-tolerant-reader</name>
     <url>https://github.com/latamautos/latamautos-tolerant-reader</url>
 
@@ -87,7 +87,7 @@
         <connection>scm:git:git@github.com:latamautos/latamautos-tolerant-reader.git</connection>
         <url>scm:git:git@github.com:latamautos/latamautos-tolerant-reader.git</url>
         <developerConnection>scm:git:git@github.com:latamautos/latamautos-tolerant-reader.git</developerConnection>
-        <tag>v1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
