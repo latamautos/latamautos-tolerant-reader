@@ -84,6 +84,13 @@
         </plugins>
     </build>
 
+    <scm>
+        <connection>scm:git:git@github.com:latamautos/latamautos-tolerant-reader.git</connection>
+        <url>scm:git:git@github.com:latamautos/latamautos-tolerant-reader.git</url>
+        <developerConnection>scm:git:git@github.com:latamautos/latamautos-tolerant-reader.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <distributionManagement>
         <repository>
             <id>deployment-releases</id>
