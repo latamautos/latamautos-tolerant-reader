@@ -94,12 +94,12 @@
         <repository>
             <id>deployment-releases</id>
             <name>Internal Releases</name>
-            <url>http://jenkins.latamautos.com/:8081/nexus/content/repositories/releases/</url>
+            <url>http://jenkins.latamautos.com:8081/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
             <id>deployment</id>
             <name>Internal Snapshots</name>
-            <url>http://jenkins.latamautos.com/:8081/nexus/content/repositories/snapshots/</url>
+            <url>http://jenkins.latamautos.com:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
